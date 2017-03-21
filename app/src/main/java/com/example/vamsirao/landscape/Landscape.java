@@ -27,6 +27,12 @@ public class Landscape extends Service {
         orientationLayout.screenOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
         ((WindowManager) getSystemService(Context.WINDOW_SERVICE)).addView(this.orientationChanger, orientationLayout);
         this.orientationChanger.setVisibility(View.VISIBLE);
+
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        return START_STICKY;
     }
 
     @Nullable
